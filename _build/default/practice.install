@@ -6,3 +6,6 @@ lib: [
 bin: [
   "_build/install/default/bin/practice"
 ]
+doc: [
+  "_build/install/default/doc/practice/README.md"
+]

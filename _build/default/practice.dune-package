@@ -1,4 +1,4 @@
 (lang dune 3.21)
 (name practice)
-(sections (lib .) (bin ../../bin))
-(files (lib (META dune-package opam)) (bin (practice)))
+(sections (lib .) (bin ../../bin) (doc ../../doc/practice))
+(files (lib (META dune-package opam)) (bin (practice)) (doc (README.md)))
