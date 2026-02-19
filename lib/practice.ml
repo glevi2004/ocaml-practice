@@ -120,6 +120,82 @@ let reverse (l : 'a list) : 'a list =
         | [] -> acc
         | x :: xs ->
             loop (x :: acc) (xs)
-    in loop ([]) (l)
+    in 
+    loop ([]) (l)
 
-    
+
+(*
+    Implement the function (TAIL RECURSIVE)
+
+    int_of_digits : int list -> int
+
+    Hint:
+    - Use a helper aux acc ds where acc is the number built so far.
+    - Each step incorporates the next digit into acc.
+*)
+let int_of_digits (l : int list) : int =
+    let rec loop acc n =
+        match n with
+        | [] -> acc
+        | x :: xs ->
+            loop (acc * 10 + x) (xs)
+    in 
+    loop (0) (l)
+
+(*
+    Implement the function (TAIL RECURSIVE)
+
+    digits_of_int : int -> int list
+
+    Hint:
+    - Use a helper aux n acc where acc stores digits collected so far.
+    - Be careful about the digit order (you may need List.rev at end).
+*)
+let digits_of_int (n : int) : int list =
+    let rec loop acc n = 
+        if n = 0 then 
+            acc
+        else
+            loop(n mod 10 :: acc) (n / 10)
+    in
+    if n = 0 then
+        [0]
+    else 
+        loop ([]) (n)
+
+(*
+    Implement the function
+
+    gcd : int -> int -> int
+
+    such that gcd i j returns the greatest common divisor of i and j.
+
+    Assumptions:
+    - Inputs are positive integers
+
+    Notes:
+    - This workshop version uses repeated subtraction (not modulo).
+    - Should satisfy gcd i j = gcd j i and gcd i i = i.
+*)
+
+(*
+    Implement the function
+
+    py_triples : int -> (int * int * int) list
+
+    such that py_triples n returns all Pythagorean triples (i, j, k)
+    with 1 <= i <= j <= k <= n, where:
+
+      i*i + j*j = k*k
+
+    Additionally, keep only "primitive" triples where:
+      gcd i (gcd j k) = 1
+
+    Output:
+    - A list of triples (i, j, k)
+
+    Notes:
+    - The Python version uses three nested loops and appends to an output list.
+    - In OCaml, you'll typically use recursion / list building instead of mutation.
+*)
+
