@@ -86,3 +86,16 @@ let delete_every_other (l : int list) : int list =
     in
     aux (false) (l)
 
+
+(*
+    Implement the function
+
+    reverse : 'a list -> 'a list
+
+    such that reverse l is the same as l but in
+    reverse order
+
+*)
+let reverse_easy (l : 'a list) : 'a list = 
+    List.rev l
+
