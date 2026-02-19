@@ -99,3 +99,27 @@ let delete_every_other (l : int list) : int list =
 let reverse_easy (l : 'a list) : 'a list = 
     List.rev l
 
+let rec reverse_medium (l : 'a list) : 'a list =
+    match l with
+    | [] -> []
+    | x :: xs ->
+        (reverse_medium xs) @ [x]
+    
+
+(*
+    Implement the function
+
+    reverse : 'a list -> 'a list
+
+    The implementation must be tail recursive
+
+*)
+let reverse (l : 'a list) : 'a list = 
+    let rec loop acc n =
+        match n with 
+        | [] -> acc
+        | x :: xs ->
+            loop (x :: acc) (xs)
+    in loop ([]) (l)
+
+    
