@@ -1,0 +1,17 @@
+# dune exec practice
+# OCAMLPARAM: unset
+# Shared cache: enabled-except-user-rules
+# Shared cache location: /Users/gabriellevicarneiroramos/.cache/dune/db
+# Workspace root:
+# /Users/gabriellevicarneiroramos/Desktop/school/spring-2026/cs320/practice
+# Auto-detected concurrency: 8
+# Dune context:
+#  { name = "default"
+#  ; kind = "default"
+#  ; profile = Dev
+#  ; merlin = true
+#  ; fdo_target_exe = None
+#  ; build_dir = In_build_dir "default"
+#  ; instrument_with = []
+#  }
+$ /Users/gabriellevicarneiroramos/.opam/cs320-s26/bin/ocamlc.opt -config > /var/folders/yq/944ftnjd0jdc2p_95c234sqc0000gn/T/dune_2e8f86_output
