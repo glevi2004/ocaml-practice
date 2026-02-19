@@ -55,7 +55,6 @@ let rec double (l: int list) : int list =
     where remove_all_negative l is the same as the
     list l but with all negative numbers removed
 *)
-
 let rec remove_all_negatives (l : int list) : int list =
     match l with 
     | [] -> []
@@ -66,3 +65,24 @@ let rec remove_all_negatives (l : int list) : int list =
         else
             (* add *)
             x :: remove_all_negatives(xs)
+
+(*
+    Implement the function
+
+    delete_every_other : int list -> int list
+
+    such that delete_every_other l is the first,
+    third, fifth,..., and so on elements of l
+*)
+let delete_every_other (l : int list) : int list = 
+    let rec aux (delete : bool) (current : int list) =
+        match current with
+        | [] -> []
+        | x :: xs ->
+            if delete = true then
+                aux (false) (xs)
+            else
+                x :: aux (true) (xs)
+    in
+    aux (false) (l)
+
