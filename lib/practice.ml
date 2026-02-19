@@ -45,3 +45,24 @@ let rec double (l: int list) : int list =
     match l with
     | [] -> []
     | x :: xs -> (2 * x) :: double(xs)
+
+
+(*
+    Implement the function
+
+    remove_all_negatives : int list -> int list
+
+    where remove_all_negative l is the same as the
+    list l but with all negative numbers removed
+*)
+
+let rec remove_all_negatives (l : int list) : int list =
+    match l with 
+    | [] -> []
+    | x :: xs -> 
+        if x < 0 then
+            (* dont add *)
+            remove_all_negatives(xs)
+        else
+            (* add *)
+            x :: remove_all_negatives(xs)
